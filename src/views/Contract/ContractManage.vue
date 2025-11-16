@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="ContractManage">
+<script setup lang="ts" name="ContractManager">
 import { ref, reactive } from 'vue'
 import { ColumnProps } from '@/components/ProTable/interface'
 import ProTable from '@/components/ProTable/index.vue'
@@ -40,9 +40,19 @@ const proTable = ref()
 const initParam = reactive({})
 
 // dataCallback 是对于返回的表格数据做处理，如果你后台返回的数据不是 datalist && total 这些字段，那么你可以在这里进行处理成这些字段
+// const dataCallback = (data: any) => {
+//   return {
+//     list: data.list,
+//     total: data.total
+//   }
+// }
 const dataCallback = (data: any) => {
+  // 对列表按 id 升序排序（确保 id 为数字类型）
+  const sortedList = data.list.sort((a: any, b: any) => {
+    return Number(a.id) - Number(b.id)
+  })
   return {
-    list: data.list,
+    list: sortedList, // 返回排序后的列表
     total: data.total
   }
 }

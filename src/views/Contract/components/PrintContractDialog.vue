@@ -12,24 +12,26 @@
         <h3 class="contract-subtitle">{{ dialogProps.row.name }}</h3>
 
         <table class="info-table">
-          <tr>
-            <td>合同编号：{{ dialogProps.row.number }}</td>
-            <td style="text-align: right">下单日期：{{ dialogProps.row.signTime }}</td>
-          </tr>
-          <tr>
-            <td>客户名称：{{ dialogProps.row.customerName }}</td>
-          </tr>
-          <tr>
-            <td>开始日期：{{ dialogProps.row.startTime }}</td>
-            <td>结束日期：{{ dialogProps.row.endTime }}</td>
-          </tr>
-          <tr>
-            <td>合同金额：{{ dialogProps.row.amount }}</td>
-            <td>已收款：{{ dialogProps.row.receivedAmount }}</td>
-          </tr>
-          <tr>
-            <td colspan="2">备注：{{ dialogProps.row.remark }}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>合同编号：{{ dialogProps.row.number }}</td>
+              <td style="text-align: right">下单日期：{{ dialogProps.row.signTime }}</td>
+            </tr>
+            <tr>
+              <td>客户名称：{{ dialogProps.row.customerName }}</td>
+            </tr>
+            <tr>
+              <td>开始日期：{{ dialogProps.row.startTime }}</td>
+              <td>结束日期：{{ dialogProps.row.endTime }}</td>
+            </tr>
+            <tr>
+              <td>合同金额：{{ dialogProps.row.amount }}</td>
+              <td>已收款：{{ dialogProps.row.receivedAmount }}</td>
+            </tr>
+            <tr>
+              <td colspan="2">备注：{{ dialogProps.row.remark }}</td>
+            </tr>
+          </tbody>
         </table>
 
         <table class="product-table">
