@@ -136,3 +136,11 @@ export const FollowUpMethodList: { [key in FollowUpMethod]: EnumInfo } = {
   [FollowUpMethod.WECHAT]: { value: 2, label: '微信' },
   [FollowUpMethod.SMS]: { value: 3, label: '短信' }
 }
+
+// 合同状态枚举（与后端ContractStatusEnum对应）
+export const ContractStatusLList: { [key in ContractStatus]: EnumInfo } = {
+  0: { label: '草稿', value: 0 },
+  1: { label: '待审核', value: 1 },
+  2: { label: '审核通过', value: 2 },
+  3: { label: '审核拒绝', value: 3 }
+}
