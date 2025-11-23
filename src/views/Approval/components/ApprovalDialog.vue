@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, defineProps, defineEmits, watch } from 'vue'
+import { ref, reactive, defineProps, defineEmits, watch, computed } from 'vue'
 import { ElForm } from 'element-plus'
 
 // 1. 接收父组件参数：使用 modelValue 作为 v-model 绑定的默认值（符合 Vue 规范）
@@ -57,7 +57,9 @@ const rules = {
 const formRef = ref<InstanceType<typeof ElForm>>()
 
 // 弹窗标题
-const dialogTitle = props.approvalType === 2 ? '审核通过' : '审核不通过'
+const dialogTitle = computed(() => {
+  return props.approvalType === 0 ? '审核通过' : '审核不通过'
+})
 
 // 提交审核
 const handleSubmit = async () => {
